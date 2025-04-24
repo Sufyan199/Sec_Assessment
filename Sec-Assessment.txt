@@ -1,0 +1,65 @@
+# text = 'hello python world' Replace spaces with underscores in the string 
+# (e.g., "hello python world" → "hello_python_world"). Split the modified string 
+# (e.g., "hello_python_world" → ['hello', 'python', 'world']). Join the list elements 
+# with a hyphen (-) between them (e.g., ['hello', 'python', 'world'] → "hellopython-world"). 
+# Print all three results Hint: Use string methods
+
+text = 'hello python world'
+
+a = text.replace(' ', '_')
+
+split_text = a.split('_')
+
+b = '-'.join(split_text)
+
+# Print the results
+print(a)
+print(split_text)
+print( b)
+
+#Q2 
+
+word = "Javascript"
+print(len(word) == 5)
+
+#Q3
+num1 = 12
+print(num1 % 2 == 0 and num1 >=19)
+
+#Q4
+
+num2 = 3
+print(num2 <= 5 and num2 >=20)
+
+#Q5
+
+num3 = 25
+has_id = True
+print("The person is eligible." if 18 <= num3 <= 65 and has_id else "The person is not eligible.")
+
+#Q6
+
+url = "https://www.example.com"
+print( "Valid" if url.startswith("https:") else ("Invalid url"))
+
+
+#Q7
+
+price = 100
+dic = price-10%(price)
+print(dic)
+
+#Q8
+
+premium_customers = ["alice@example.com", "charlie@example.com", "bob@example.com"]
+basic_customers = ["alex@example.com", "david@example.com", "chloe@example.com"]
+
+print("Yes" if "alice@example.com" in premium_customers and basic_customers else("No") )
+
+
+#Q9
+
+pwd = input("Enter your password : ")
+upper = any(c.isupper() for c in pwd)
+lower = any(c.islower() for c in pwd)
+print("Yes" if upper and lower else "False")
