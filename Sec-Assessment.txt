@@ -1,65 +1,60 @@
-# text = 'hello python world' Replace spaces with underscores in the string 
-# (e.g., "hello python world" → "hello_python_world"). Split the modified string 
-# (e.g., "hello_python_world" → ['hello', 'python', 'world']). Join the list elements 
-# with a hyphen (-) between them (e.g., ['hello', 'python', 'world'] → "hellopython-world"). 
-# Print all three results Hint: Use string methods
-
+# Q1: String manipulation
 text = 'hello python world'
+a = text.replace(' ', '_')  # Replacing spaces with underscores
+split_text = a.split('_')  # Splitting by underscores
+b = '-'.join(split_text)  # Joining with a hyphen
+print(a)  # "hello_python_world"
+print(split_text)  # ['hello', 'python', 'world']
+print(b)  # "hello-python-world"
 
-a = text.replace(' ', '_')
 
-split_text = a.split('_')
 
-b = '-'.join(split_text)
-
-# Print the results
-print(a)
-print(split_text)
-print( b)
-
-#Q2 
-
+# Q2: Check if the length of the string is more than 5
 word = "Javascript"
-print(len(word) == 5)
+print(len(word) > 5)  # True because "Javascript" has 10 characters
 
-#Q3
+
+
+# Q3: Check if a number is even and greater than 10
 num1 = 12
-print(num1 % 2 == 0 and num1 >=19)
+print(num1 % 2 == 0 and num1 > 10)  # True because 12 is even and > 10
 
-#Q4
 
+
+# Q4: Check if a number is less than 5 or greater than 20
 num2 = 3
-print(num2 <= 5 and num2 >=20)
+print(num2 < 5 or num2 > 20)  # True because 3 is less than 5
 
-#Q5
 
+
+# Q5: Check if a person is eligible based on age and ID
 num3 = 25
 has_id = True
-print("The person is eligible." if 18 <= num3 <= 65 and has_id else "The person is not eligible.")
+print("The person is eligible." if 18 <= num3 <= 65 and has_id else "The person is not eligible.")  # "The person is eligible."
 
-#Q6
 
+
+# Q6: Check if URL starts with "https://" or "http://"
 url = "https://www.example.com"
-print( "Valid" if url.startswith("https:") else ("Invalid url"))
+print("Valid" if url.startswith("https://") else "Invalid url")  # Valid
 
 
-#Q7
 
+# Q7: Apply a 10% discount using the assignment operator
 price = 100
-dic = price-10%(price)
-print(dic)
+price -= price * 0.10  # 10% discount
+print(price)  # 90.0
 
-#Q8
 
+
+# Q8: Check if a customer is in both premium and basic lists
 premium_customers = ["alice@example.com", "charlie@example.com", "bob@example.com"]
 basic_customers = ["alex@example.com", "david@example.com", "chloe@example.com"]
+print("Yes" if "alice@example.com" in premium_customers and "alice@example.com" in basic_customers else "No")  # No
 
-print("Yes" if "alice@example.com" in premium_customers and basic_customers else("No") )
 
-
-#Q9
-
-pwd = input("Enter your password : ")
+# Q9: Check if a password contains both uppercase and lowercase letters
+pwd = input("Enter your password: ")  # User input required
 upper = any(c.isupper() for c in pwd)
 lower = any(c.islower() for c in pwd)
-print("Yes" if upper and lower else "False")
+print("Yes" if upper and lower else "False")  # "Yes" if both are true
