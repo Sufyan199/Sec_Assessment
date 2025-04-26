@@ -1,78 +1,99 @@
-# Q1: String manipulation
+#Q1 
+# text = 'hello python world' 
+# Replace spaces with underscores (e.g., "hello python world" → "hello_python_world").
+# Split the modified string (e.g., "hello_python_world" → ['hello', 'python', 'world']).
+# Join the list elements with a hyphen (-) between them (e.g., ['hello', 'python', 'world'] → "hello-python-world").
+# Print all three results. Hint: Use string methods.
 text = 'hello python world'
-a = text.replace(' ', '_') 
-split_text = a.split('_') 
-b = '-'.join(split_text) 
-print("Q1 Results:")
-print(a)  # "hello_python_world"
-print(split_text)  # ['hello', 'python', 'world']
-print(b)  # "hello-python-world"
-print()
+modified_text = text.replace(" ", "_")
+split_text = modified_text.split("_")
+joined_text = "-".join(split_text)
+print(modified_text)
+print(split_text)
+print(joined_text)
 
-
-
-# Q2: Check if the length of the string is more than 5
+#Q2 
+# Check if a string has more than 5 characters. Return True/False
+# word = "Javascript"
 word = "Javascript"
-print("Q2 Result:")
-print(len(word) > 5)  # True
-print()
+result = len(word) > 5
+print(result)
 
+#Q3 
+# Check if a number is even and greater than 10. Return True/False
+# num2 = 12
+num2 = 12
+result = (num2 % 2 == 0) and (num2 > 10)
+print(result)
 
+#Q4 
+# Check if a number is less than 5 or greater than 20. Return True/False
+# num3 = 3
+num3 = 3
+result = (num3 < 5) or (num3 > 20)
+print(result)
 
-# Q3: Check if a number is even and greater than 10
-num1 = 12
-print("Q3 Result:")
-print(num1 % 2 == 0 and num1 > 10)  # True
-print()
-
-
-
-# Q4: Check if a number is less than 5 or greater than 20
-num2 = 3
-print("Q4 Result:")
-print(num2 < 5 or num2 > 20)  # True
-print()
-
-
-
-# Q5: Check if a person’s age is between 18 and 65 and if they have a valid ID
-num3 = 25
+#Q5 
+# Check if a person's age is between 18 and 65 and if they have a valid ID
+# age = 25
+# has_id = True
+age = 25
 has_id = True
-print("Q5 Result:")
-print("The person is eligible." if 18 <= num3 <= 65 and has_id else "The person is not eligible.")
-print()
+result = (18 <= age <= 65) and has_id
+print(result)
 
-
-
-# Q6: Check if URL starts with "https://" or "http://"
+#Q6 
+# Write a script to check if a string starts with (http://) or (https://)
+# url = "https://www.example.com"
 url = "https://www.example.com"
-print("Q6 Result:")
-print("Valid" if url.startswith("https://") else "Invalid url")
-print()
+result = url.startswith("http://") or url.startswith("https://")
+print(result)
 
-
-
-# Q7: Apply a 10% discount using the assignment operator
+#Q7 
+# Write a script that applies a 10% discount to an item's price. (Using Assignment Operator)
+# price = 100
 price = 100
-price -= price * 0.10  # 10% discount
-print("Q7 Result:")
-print(price)  # 90.0
-print()
+price *= 0.9
+print(price)
 
-
-
-# Q8: Check if a customer is in both premium and basic lists
+#Q8 
+# You are managing different customer lists for a subscription service,
+# check if alice@example.com is both a premium and basic customer
+# premium_customers = ["alice@example.com", "charlie@example.com", "bob@example.com"]
+# basic_customers = ["alex@example.com", "david@example.com", "chloe@example.com"]
 premium_customers = ["alice@example.com", "charlie@example.com", "bob@example.com"]
 basic_customers = ["alex@example.com", "david@example.com", "chloe@example.com"]
-print("Q8 Result:")
-print("Yes" if "alice@example.com" in premium_customers and "alice@example.com" in basic_customers else "No")
-print()
+email = "alice@example.com"
+result = (email in premium_customers) and (email in basic_customers)
+print(result)
 
+#Q9 
+# Write a Python program that prompts the user to enter a password and returns True or False
+# based on the following checks:
+# 1. Whether the string contains any uppercase characters.
+# 2. Whether the string contains any lowercase characters.
+# 3. Whether the string contains any spaces.
+# 4. Whether the string contains any special characters (anything other than letters, digits, and spaces).
+# Hint: Use Input function and string methods.
+password = input("Enter your password: ")
+has_upper = any(c.isupper() for c in password)
+has_lower = any(c.islower() for c in password)
+has_space = any(c.isspace() for c in password)
+has_special = any(not c.isalnum() and not c.isspace() for c in password)
+result = has_upper and has_lower and (not has_space) and has_special
+print(result)
 
-
-# Q9: Check password conditions (has upper and lower case letters)
-pwd = input("Enter your password: ")  # User input required
-upper = any(c.isupper() for c in pwd)
-lower = any(c.islower() for c in pwd)
-print("Q9 Result:")
-print("Yes" if upper and lower else "False")
+#Q10 
+# You have a product code that follows the format "SKU-12345-XYZ".
+# Find the first position of the dash (-).
+# Count the number of dashes (-) in the product code.
+# Remove the "SKU-" prefix and "-XYZ" suffix from the product code.
+# Extract the numeric part 12345.
+# Hint: Use String Methods.
+product_code = "SKU-12345-XYZ"
+first_dash_pos = product_code.find("-")
+dash_count = product_code.count("-")
+numeric_part = product_code.replace("SKU-", "").replace("-XYZ", "")
+print(first_dash_pos)
+print(dash_count)
+print(numeric_part)
